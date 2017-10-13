@@ -1,0 +1,126 @@
+<!DOCTYPE html>
+<html>
+<Body BGCOLOR="LightBlue" Text="Green">
+
+<center> <h1>Dream Trip to Europe</h1>
+
+<center> <p>This is my dream trip, a 20 days trip from South Pasadena to Europe</p>
+
+<center> <div id="map" style="width:700px;height:700px;background:yellow"></div>
+
+<script>
+function myMap() {
+var mapOptions = {
+    center: new google.maps.LatLng(34.1161, -118.1503),
+    zoom: 2,
+    mapTypeId: google.maps.MapTypeId.HYBRID
+}
+var map = new google.maps.Map(document.getElementById("map"), mapOptions);
+
+
+//South Pasadena
+var southpasadena = new google.maps.LatLng(34.1161, -118.1503);
+
+var spMarker = new google.maps.Marker({position:southpasadena});
+spMarker.setMap(map);
+
+	google.maps.event.addListener(spMarker,'click',function(){
+    var infowindow = new google.maps.InfoWindow({
+      content:"Our trip will start from here, home."
+    });
+  infowindow.open(map,spMarker);
+  });
+  
+//Miami
+var miami = new google.maps.LatLng(25.7617, -80.1918);
+
+var miMarker = new google.maps.Marker({position:miami});
+miMarker.setMap(map);
+
+	google.maps.event.addListener(miMarker,'click',function(){
+	var infowindow = new google.maps.InfoWindow({
+	  content:"Miami is the capital city of Florida. It has some really big harbor. We will abord a cruising ship and go to London."
+	});
+  infowindow.open(map,miMarker);
+  });
+  
+//London
+var london = new google.maps.LatLng(51.5074, -0.1278);
+
+var lonMarker = new google.maps.Marker({position:london});
+lonMarker.setMap(map);
+
+	google.maps.event.addListener(lonMarker,'click',function(){
+    var infowindow = new google.maps.InfoWindow({
+      content:"London is the capital of United Kingdom. There are a lot of people with different races living there. London used to be one of the biggest industrial city in the world during the Industrial Revolution."
+    });
+  infowindow.open(map,lonMarker);
+  });
+
+//Berlin
+var berlin = new google.maps.LatLng(52.5200, 13.4050);
+
+var berMarker = new google.maps.Marker({position:berlin});
+berMarker.setMap(map);
+
+	google.maps.event.addListener(berMarker,'click',function(){
+    var infowindow = new google.maps.InfoWindow({
+      content:"Berlin is the capital of Germany. Berlin is one of the best city to live in around the world. There are a lot of old buildings there but lot of them got destroyed during World War 2"
+    });
+  infowindow.open(map,berMarker);
+  });
+
+//Paris
+var paris = new google.maps.LatLng(48.8566, 2.3522);
+
+var parMarker = new google.maps.Marker({position:paris});
+parMarker.setMap(map);
+
+		google.maps.event.addListener(parMarker,'click',function(){
+    var infowindow = new google.maps.InfoWindow({
+      content:"Paris the capital of United Kingdom. The Eiffel Tower is the sign of the city. French King used to live there, so the city looks very luxury."
+    });
+  infowindow.open(map,parMarker);
+  });
+
+//Madrid
+var madrid = new google.maps.LatLng(40.4168, -3.7038);
+
+var maMarker = new google.maps.Marker({position:madrid});
+maMarker.setMap(map);
+
+google.maps.event.addListener(maMarker,'click',function(){
+    var infowindow = new google.maps.InfoWindow({
+      content:"Madrid is the capital of Spain. The best city to visit in my opinion. The whole city is filled with modern technology and historical building and special living style. Madrid is one of the most beautiful city in the world."
+    });
+  infowindow.open(map,maMarker);
+  });
+  
+  var flightPath = new google.maps.Polyline({
+    path: [southpasadena, miami, london, berlin, paris, madrid],
+    strokeColor: "#F53D16",
+    strokeOpacity: 1.0,
+    strokeWeight: 2
+  });
+  flightPath.setMap(map);
+
+}
+</script>
+
+<script src="https://maps.googleapis.com/maps/api/js?key=AIzaSyC1Ex394r-4L_901e7tPgD2sBdhaZ_qYAo&callback=myMap"></script>
+
+	    <center> <li> South Pasadena</li>
+		<center> <img src="sp.jpg" Height="300" width="400" >
+		<center> <li> Miami</li>
+		<center> <img src="mi.jpg" Height="300" width="400" >
+		<center> <li> London</li>
+		<center> <img src="lon.jpg" Height="300" width="400" >
+		<center> <li> Berlin</li>
+		<center> <img src="ber.jpg" Height="300" width="400" >
+		<center> <li> Paris</li>
+		<center> <img src="par.jpg" Height="300" width="400" >
+		<center> <li> Madrid</li>
+		<center> <img src="ma.jpg" Height="300" width="400" >
+
+</body>
+</html>
